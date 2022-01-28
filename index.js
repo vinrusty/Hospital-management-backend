@@ -6,6 +6,7 @@ const app = express()
 const Patient = require('./models/Patient')
 const Prescription = require('./models/Prescription')
 const Doctor = require('./models/Doctor')
+const emergencyWardRegistration = require('./models/EmergencyWard')
 const dotenv = require('dotenv')
 
 dotenv.config()
@@ -39,6 +40,17 @@ app.get('/patients-module/patients-list', async(req, res) => {
 
 app.get('/doctors-module', (req, res) => {
 
+})
+
+app.post('/doctors-module/emergency-ward-registration', async(req, res) => {
+    const emergencyPatient = new emergencyWardRegistration(req.body)
+    try{
+        const savedEmergencyPatient = await emergencyPatient.save()
+        res.json(savedEmergencyPatient) 
+    }
+    catch(err){
+        res.status(400).json('could not register :(')
+    }
 })
 
 app.post('/patient-register', async(req, res) => {

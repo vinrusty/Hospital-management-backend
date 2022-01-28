@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const patientSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: [true, 'the Name field is empty!S']
+        required: [true, 'the Name field is empty!']
     },
     age: {
         type: Number,
