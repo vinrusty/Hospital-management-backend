@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const prescriptionSchema = new mongoose.Schema({
+    date: String,
     patient_name: {
         type: String,
         required: ['true', '#']

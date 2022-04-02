@@ -5,6 +5,10 @@ const emergencyWardSchema = mongoose.Schema({
         type: String,
         required: [true, 'the name field is empty']
     },
+    patient_id: {
+        type: String,
+        required: [true, 'the name field is empty']
+    },
     blood_group: {
         type: String,
         required: [true, 'the blood group field is required']

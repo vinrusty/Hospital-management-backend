@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
 const patientSchema = new mongoose.Schema({
+    patient_id:{
+        type: String,
+        required: true
+    },
     name: {
         type: String,
         required: [true, 'the Name field is empty!']
@@ -30,6 +34,7 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Contact of the patient is required']
     },
+    assignedDoctors: String,
     joined_date: String,
     joined_time: String
 })
